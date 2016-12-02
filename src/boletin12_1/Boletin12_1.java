@@ -18,6 +18,7 @@ public class Boletin12_1 {
         Garaxe g1 = new Garaxe();
         Coche c1 = new Coche("hjagskdgk");
         g1.aparcar(c1);
+        g1.salirGaraxe(c1);
     }
     
 }

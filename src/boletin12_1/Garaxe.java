@@ -41,10 +41,34 @@ public class Garaxe {
         }
     }
 
-    public void calcFactura() {
-
-        float coste;
-
+    public void salirGaraxe(Coche c1) {
+        Date horasalida = new Date();
+        float coste = 0;
+        double horas = 2 ; 
+        
+        for (int i = 0;  i < matricula.length; i++) {
+            if (matricula[i].getMatricula() == c1.getMatricula() ) {
+    //            horas = Math.floor(horasalida.getTime()-(matricula[i].getHentrada().getTime()))/3600000;
+                matricula[i] = null;
+                break;
+            }
+        }
+        System.out.println("Horas: "+ horas);
+        Boolean primeras3 = false;
+        while (horas > 0) {
+           if (horas >= 3 && primeras3 == false) {
+               primeras3 = true;
+               coste += 1.5;
+               horas-= 3;
+           }
+           else {
+               if (horas >= 1) {
+                coste += 0.2;
+                horas -=1;                  
+               }
+           }
+        }
+        System.out.println("Coste: "+ coste);
     }
 
 }
